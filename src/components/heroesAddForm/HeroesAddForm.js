@@ -11,15 +11,14 @@ const HeroesAddForm = () => {
   const [heroDescr, setHeroDescr] = useState("");
   const [heroElement, setHeroElement] = useState("");
 
-  const { filters, filtersLoadingStatus } = useSelector((state) => state);
+  const { filters, filtersLoadingStatus } = useSelector(
+    (state) => state.filters
+  );
   const dispatch = useDispatch();
   const { request } = useHttp();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    // Можно сделать и одинаковые названия состояний,
-    // хотел показать вам чуть нагляднее
-    // Генерация id через библиотеку
     const newHero = {
       id: uuidv4(),
       name: heroName,
