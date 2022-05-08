@@ -7,10 +7,22 @@
       "element": "wind"
     },
     {
-      "id": "b3e87fe6-e705-4f82-903f-a49e335a2868",
-      "name": "Freya Mcintyre",
-      "description": "In sit natus volupta",
+      "id": "a3afbd0f-dda6-4b11-b1bb-354873adc92b",
+      "name": "Madison Mcintosh",
+      "description": "Voluptatem sed quas",
       "element": "water"
+    },
+    {
+      "id": "48c70083-704a-434b-b135-cc3d59c62efc",
+      "name": "Adam Curtis",
+      "description": "Ut aut nesciunt rep",
+      "element": "water"
+    },
+    {
+      "id": "4029f812-f6fe-43b8-8237-5b12dcec82cb",
+      "name": "Leila Head",
+      "description": "Eu sint quia commod",
+      "element": "fire"
     }
   ],
   "filters": [
