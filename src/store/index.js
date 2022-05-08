@@ -1,6 +1,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import filters from "../reducers/filters";
 import heroes from "../reducers/heroes";
+import ReduxThunk from "redux-thunk";
 
 const stringMiddleware = () => (next) => (action) => {
   if (typeof action === "string") {
@@ -35,7 +36,7 @@ const store = createStore(
     filters,
   }),
   compose(
-    applyMiddleware(stringMiddleware),
+    applyMiddleware(ReduxThunk, stringMiddleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
