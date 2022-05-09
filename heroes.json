@@ -1,52 +1,51 @@
 {
   "heroes": [
     {
-      "id": "9ed07b78-d180-4956-b5c8-963c07280ddb",
-      "name": "Lacy Hendricks",
-      "description": "Quisquam molestias s",
+      "id": "f2687a8d-26e6-402c-9b66-49a532382b9b",
+      "name": "Finn Kirk",
+      "description": "Ut impedit voluptat",
+      "element": "earth"
+    },
+    {
+      "id": "f22fe67d-450d-4cd0-ae29-431d38a4c9a1",
+      "name": "Irene Walters",
+      "description": "Odio rerum laboriosa",
       "element": "fire"
     },
     {
-      "id": "8a959cea-ada6-4c93-b543-f0b16e453790",
-      "name": "Giselle Houston",
-      "description": "Harum quibusdam quis",
-      "element": "water"
-    },
-    {
-      "id": "e2cc8d23-f9ed-45a3-b055-db196342eceb",
-      "name": "Brennan Curtis",
-      "description": "In autem repudiandae",
-      "element": "wind"
-    },
-    {
-      "id": "33c6ddaf-89f4-426b-94bf-f849ebb35722",
-      "name": "Channing Erickson",
-      "description": "Id esse exercitatio",
+      "id": "0dbe236c-b9df-4330-9122-4bd4a3f94d18",
+      "name": "Aidan Roth",
+      "description": "Optio facere tempor",
       "element": "earth"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"
