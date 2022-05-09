@@ -1,12 +1,11 @@
-import { useHttp } from "../../hooks/http.hook";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchHeroes } from "../../actions";
-import { heroDeleted } from "./heroesSlice";
+import { fetchHeroes, heroDeleted } from "./heroesSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
+import { useHttp } from "../../hooks/http.hook";
 
 const HeroesList = () => {
   const filteredHeroesSelector = createSelector(
@@ -29,9 +28,19 @@ const HeroesList = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(fetchHeroes(request));
+    dispatch(fetchHeroes());
     // eslint-disable-next-line
   }, []);
+
+  const onDelete = useCallback(
+    (id) => {
+      request(`http://localhost:3001/heroes/${id}`, "DELETE")
+        .then((data) => console.log(data, "DELETED"))
+        .then(dispatch(heroDeleted(id)))
+        .catch((err) => console.log(err));
+    },
+    [request]
+  );
 
   if (heroesLoadingStatus === "loading") {
     return <Spinner />;
@@ -43,13 +52,6 @@ const HeroesList = () => {
     if (arr.length === 0) {
       return <h5 className="text-center mt-5">Героев пока нет</h5>;
     }
-
-    const onDelete = (id) => {
-      request(`http://localhost:3001/heroes/${id}`, "DELETE")
-        .then((data) => console.log(data, "DELETED"))
-        .then(dispatch(heroDeleted(id)))
-        .catch((err) => console.log(err));
-    };
 
     return arr.map(({ id, ...props }) => {
       return (
